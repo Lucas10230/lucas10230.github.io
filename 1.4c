@@ -1,0 +1,18 @@
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+
+        for (int x = 1; x <= 100; x++) {
+            sum = sum + x;
+
+            if (x % 2 == 0) {
+                System.out.println(x + "\tEven");
+            } else {
+                System.out.println(x + "\tOdd");
+            }
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
