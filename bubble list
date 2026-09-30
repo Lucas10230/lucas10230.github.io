@@ -1,0 +1,35 @@
+import java.util.Arrays;
+
+public class Bubblelist {
+    public static void main(String[] args) {
+        int[] arrayToSort = {1, 3, 4, 5, 1, 23, 57, 126, 4, 543, 345, 23, 12, 45, 67, 97};
+
+        System.out.println("Unsorted array: " + Arrays.toString(arrayToSort));
+        arrayToSort = bubbleSort(arrayToSort);
+        System.out.println("Sorted array:   " + Arrays.toString(arrayToSort));
+    }
+
+    public static int[] bubbleSort(int[] arrayToSort) {
+        boolean doSwap = true;
+
+        while (doSwap) {
+            doSwap = false;
+
+            for (int indexToSwap = 0; indexToSwap < arrayToSort.length - 1; indexToSwap++) {
+                if (arrayToSort[indexToSwap] > arrayToSort[indexToSwap + 1]) {
+                    doSwap = true;
+                    arrayToSort = swapTwoArrayElements(arrayToSort, indexToSwap);
+                }
+            }
+        }
+
+        return arrayToSort;
+    }
+
+    public static int[] swapTwoArrayElements(int[] arrayToSwap, int lowerIndex) {
+        int temporary = arrayToSwap[lowerIndex];
+        arrayToSwap[lowerIndex] = arrayToSwap[lowerIndex + 1];
+        arrayToSwap[lowerIndex + 1] = temporary;
+        return arrayToSwap;
+    }
+}
