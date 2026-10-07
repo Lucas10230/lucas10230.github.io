@@ -1,0 +1,40 @@
+public class Horse {
+    private String name;
+    private int birthYear;
+// this creates a new Horse object and stores its name and birth year in the private variables
+    public Horse(String horseName, int year) {
+        name = horseName;
+        birthYear = year;
+    }
+// gives the horse's name
+    public String getName() {
+        return name;
+    }
+// gives the horse's birth year
+    public int getBirthYear() {
+        return birthYear;
+    }
+// changes the horse's name to a new name
+    public void changeName(String newName) {
+        name = newName;
+    }
+// changes the horse's birth year 
+    public void setBirthYear(int year) {
+        birthYear = year;
+    }
+// this tells Java to print the horse's name when the object is printed
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public static void main(String[] args) {
+        Horse horse1 = new Horse("Silver", 2000);
+        Horse horse2 = new Horse("Trigger", 1998);
+        Horse horse3 = new Horse("Spirit", 2005);
+// this is where it creates 3 different horse objects with different names and birth years
+        System.out.println(horse1);
+        System.out.println(horse2);
+        System.out.println(horse3);
+    }
+}
